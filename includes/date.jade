@@ -1,0 +1,48 @@
+// #(Date)
+section.panel
+  footer.post-footer
+    section.inline-meta.date-notes
+      .date-note-wrapper
+        // #(NoteCount)
+        a.meta-item.post-notes(href='{Permalink}#notes') {NoteCountWithLabel}
+        // ##
+        a.meta-item.post-date(href='{Permalink}', title='{TimeAgo}') {ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}
+
+    section.post-controls
+      .controls-wrapper
+        .control.share-control
+          nav.pop
+            a.share.selector.icon-export(href='#')
+
+            .pop-menu.share-menu.south(id='share_{PostID}')
+              ul
+                li.open-in-app
+                  a.share-item.open-in-app(href='#', data-post='{PostID}') Open in app
+                li
+                  a.share-item.facebook(href='http://facebook.com/sharer.php?u={URLEncodedPermalink}&t={URLEncodedTitle}', target='_blank') Facebook
+                li
+                  a.share-item.twitter(href='https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}', target='_blank') Tweet
+
+                // #(Photo)
+                li
+                  a.share-item.pinterest(href='//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&media={PhotoURL-500}', target='_blank') Pinterest
+                // ##
+
+                // #(Video)
+                // #(VideoThumbnail)
+                li
+                  a.share-item.pinterest(href='//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&media={VideoThumbnailURL}&is_video=true', target='_blank') Pinterest
+                // ##
+                // ##
+
+                li
+                  a.share-item.mail(href='mailto:?subject={URLEncodedShareString}&body={URLEncodedMailSummary}') Mail
+                li
+                  a.share-item.permalink(href='{Permalink}/embed') Embed
+                li
+                  a.share-item.permalink(href='{Permalink}')
+                    | {lang:Permalink}
+                    i.icon-arrow_carrot_right
+        .control.reblog-control {ReblogButton size="21" color="black"}
+        .control.like-control {LikeButton size="20" color="black"}
+// ##

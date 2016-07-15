@@ -1,0 +1,6 @@
+output_path: .peak
+port:
+index: index.jade
+blog:
+email:
+password:

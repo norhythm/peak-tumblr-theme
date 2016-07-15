@@ -1,0 +1,52 @@
+doctype html
+html(lang="ja")
+  head
+    include ./meta/head.jade
+    // +(src: 'stylesheets/inline.css' media: 'all')
+    // +(src: 'stylesheets/style.styl' media: 'all')
+
+  body(data-urlencoded-name="{URLEncodedName}" class="{select:Layout}{block:IndexPage} index-page{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:SearchPage} search-page{block:NoSearchResults} no-results{/block:NoSearchResults}{/block:SearchPage}{block:HideHeaderImage} no-header-image{/block:HideHeaderImage}{block:NoStretchHeaderImage} contain-header-image{/block:NoStretchHeaderImage}")
+
+    section#page
+
+      //- include ./includes/logo.jade
+      include ./includes/header.jade
+
+      section(id="posts" class="content clearfix {block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}{block:HideHeaderImage}no-image {/block:HideHeaderImage} {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar} {block:HideAvatar}avatar-hidden{/block:HideAvatar} {block:IfShowNavigation}show-nav{/block:IfShowNavigation}")
+
+        div(data-page-id="{CurrentPage}")
+          //- // #(Posts inlineMediaWidth="700" inlineNestedMediaWidth="700")
+          // #(Posts)
+
+          //- article.active(class='{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} exposed{/block:PermalinkPage}', {block:date}data-post-id='post_{PostID}', {='', block:date}='')
+
+          //- article.active(class='{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} exposed{/block:PermalinkPage}')
+
+          //- textを強制
+          article.active.text(class='{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} exposed{/block:PermalinkPage}')
+            .post-wrapper.clearfix
+              // #(RebloggedFrom)
+              header.reblog-header
+                a.reblog-link(href='{ReblogParentURL}')
+                  i.icon-reblog
+                    | {ReblogParentName}
+              // ##
+              section.post
+                include ./post/text.jade
+                //- include ./post/photo.jade
+                //- include ./post/photoset.jade
+                //- include ./post/quote.jade
+                //- include ./post/link.jade
+                //- include ./post/chat.jade
+                //- include ./post/audio.jade
+                //- include ./post/video.jade
+                //- include ./post/answer.jade
+                //- include ./post/meta.jade
+
+              //- include ./includes/date.jade
+              //- include ./includes/permalink.jade
+          // ##
+
+    include ./includes/script.jade
+    include ./includes/ga.jade
+    include ./includes/footer.jade

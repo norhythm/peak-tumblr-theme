@@ -1,0 +1,7 @@
+.logo-wrapper
+  a.t-logo(href='https://www.tumblr.com/?referring_blog={URLEncodedName}&referer=optica', target='_blank')
+
+  .search-wrapper
+    form#search(action='/search', method='get')
+      label.search-field-label
+        input#q.search-field(type='text', name='q', placeholder='{lang:Search Blog}', value='{SearchQuery}')

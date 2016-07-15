@@ -1,0 +1,20 @@
+footer#footer.content.clearfix
+  // #(IndexPage)
+  // #(Pagination)
+  #pagination
+    // #(PreviousPage)
+    a.previous(href="{PreviousPage}" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}")
+      !(lang:Previous)
+      span.bg
+    // ##
+    // #(NextPage)
+    a.next(href="{NextPage}" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}")
+      !(lang:Next)
+      span.bg
+    // ##
+    .loader
+      .loader-bar
+      .loader-bar
+      .loader-bar
+  // ##
+  // ##

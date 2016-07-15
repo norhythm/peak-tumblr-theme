@@ -1,0 +1,55 @@
+.header-wrapper(class='{block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle} {block:HideHeaderImage}no-image {/block:HideHeaderImage} {block:HideAvatar}avatar-hidden{/block:HideAvatar} {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar}')
+  header#header
+    // #(ShowHeaderImage)
+    .header-image-wrapper(class='{block:NoStretchHeaderImage}contain{/block:NoStretchHeaderImage}')
+      a.header-image(href='/', class='{block:IfSlidingHeader}parallax{/block:IfSlidingHeader} {block:StretchHeaderImage}cover{/block:StretchHeaderImage} {block:NoStretchHeaderImage}contain{/block:NoStretchHeaderImage}', data-bg-image='{HeaderImage}')
+        // #(NoStretchHeaderImage)
+        img(src="{HeaderImage}" alt="")
+        // ##
+      .loader-bg
+    // ##
+
+    .blog-title-wrapper.content
+      //- figure(class='avatar-wrapper{block:IndexPage} animate{/block:IndexPage}')
+      //-   a.user-avatar(href='/', style='background-image: url({PortraitURL-128})')
+      //-       img.print-only.invisible(src='{PortraitURL-128}', alt='')
+
+      div(class='title-group{block:IndexPage} animate{/block:IndexPage}')
+        // #(ShowTitle)
+        h1.blog-title
+          a(href='/')
+        // ##
+
+        // #(ShowDescription)
+        span.description
+          {Description}
+        // ##
+
+        // #(IfShowNavigation)
+        .content(class='{block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}nav-wrapper')
+          nav.nav-menu
+            ul.inline-nav
+              // #(HasPages)
+              // #(Pages)
+              li.nav-item.nav-item--page
+                a.label(href="{URL}") {Label}
+              // ##
+              // ##
+              // #(AskEnabled)
+              li.nav-item.nav-item--ask
+                a.label(href="/ask") {AskLabel}
+              // ##
+              // #(SubmissionsEnabled)
+              li.nav-item.nav-item--submit
+                a.label(href="/submit") {SubmitLabel}
+              // ##
+              li.nav-item.nav-item--archive
+                a.label(href="/archive") {lang:Archive}
+        // ##
+
+// #(SearchPage)
+// #(NoSearchResults)
+.search-no-results.content
+  {lang:Sorry no search results found}.
+// ##
+// ##

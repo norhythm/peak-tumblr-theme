@@ -1,0 +1,24 @@
+// #(Link)
+div(class="post-content{block:Description} with-caption{/block:Description}{block:Thumbnail} with-thumbnail{/block:Thumbnail}")
+  .link-wrapper
+    a.link({Target} href="{URL}")
+      // #(Thumbnail)
+      .link-thumbnail
+        img(src="{Thumbnail-HighRes}" alt="")
+      // ##
+      .link-text-wrapper.clearfix
+        .link-text
+          // #(Host)
+          .link-host {Host}
+          // ##
+          h2.link-title {Name}
+          // #(Excerpt)
+          .link-excerpt {Excerpt}
+          // ##
+          // #(Author)
+          .link-author {Author}
+          // ##
+  // #(Description)
+  .caption {Description}
+  // ##
+// ##

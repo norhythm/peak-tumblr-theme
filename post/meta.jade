@@ -1,0 +1,13 @@
+section.inline-meta(class="post-extra{block:RebloggedFrom} has-reblog{/block:RebloggedFrom}{block:ContentSource} has-source{/block:ContentSource}{block:HasTags} has-tags{/block:HasTags}")
+  // #(RebloggedFrom)
+  a(class="meta-item reblog-link" href="{ReblogParentURL}")
+    i(class="icon-reblog") {ReblogParentName}
+  // ##
+  // #(ContentSource)
+  a(class="meta-item source-link" href="{SourceURL}") {lang:Source}: {SourceTitle}
+  // ##
+  // #(HasTags)
+  // #(Tags)
+  a(class="meta-item tag-link" href="{TagURL}") {Tag}
+  // ##
+  // ##
